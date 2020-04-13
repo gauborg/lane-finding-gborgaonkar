@@ -7,11 +7,11 @@
 The goals / steps of this project are the following:
 * Develop a pipeline that finds lane lines on the road and highlights them as shown in the image below -
 
-[image2]: ./examples/laneLines_thirdPass.jpg "example-lanelines"
+[image1]: ./examples/laneLines_thirdPass.jpg "example-lanelines"
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image2]: ./examples/grayscale.jpg "Grayscale"
 
 ---
 
