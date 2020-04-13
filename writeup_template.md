@@ -5,9 +5,8 @@
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
+* Develop a pipeline that finds lane lines on the road and highlights them as shown in the image below -
+[image1]: ./examples/lanelines_thirdPass.jpg "example-lanelines"
 
 [//]: # (Image References)
 
@@ -19,7 +18,10 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+The procedure of identifying lanelines in a given image or video stream involves the following steps:
+Here is the procedure I followed:
+1. Converted the image to grayscale using opencv.
+2. 
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
