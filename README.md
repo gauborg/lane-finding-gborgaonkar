@@ -16,7 +16,7 @@ We use Jupyter Notebook to run our code. I have also created an environment usin
 
 I have defined functions for different image processing steps involved. My code pipeline consists of following steps:
 
-1. Convert the image to grayscale using cv2.cvtColor()[https://docs.opencv.org/2.4/modules/imgproc/doc/miscellaneous_transformations.html#cvtcolor].
+1. Convert the image to grayscale using [cv2.cvtColor()](https://docs.opencv.org/2.4/modules/imgproc/doc/miscellaneous_transformations.html#cvtcolor).
 2. We apply Gaussian filter to suppress any noise present in our images using OpenCV inbuild gaussian_blur function.
 3. Use Canny Edge Detection from OpenCV to detect edges in our test images. I experimented with different values and applied thresholds of 50 and 150 for edge detection.
 4. Using region masking principles, we specify the points which mark the endpoints of our region of interest. We specify the vertices approximately by looking at the image (these values can be tweaked) and specify the points in the form of array in image space.
