@@ -23,14 +23,30 @@ I have defined separate functions for different image processing steps involved.
 
 After this step, to draw the lanelines, we write our code in the **draw_lines()** function which takes as input an image, detected canny lines in our region of interest and color options for drawing the lines.
 
-In the **draw_lines()** function, I used the following principles to identify lanelines.
+In the **draw_lines()** function, I used the following principles to identify lanelines. In order to draw lanelines, we have to calculate the equation of the two lanelines given by the formula [**y = mx + b**](https://en.wikipedia.org/wiki/Slope).
 
-<<<<<<< HEAD
-||||||| merged common ancestors
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-=======
-1. We filter every line from our list of detected lines (using Canny) by specifying a slope range. The lane lines on the left side of the image will have positive slope whereas those on the right side have negative slope.
->>>>>>> a8f34c8afc132316c8e2b47797bfcf6e3cede36c
+1. We calculate the slope of a line, we get the end co-ordinates of the line (x1, y1, x2, y2).
 
 ![slope of a line](/readMe_images/slope_formula.png)
+
+2. After calculating the slope for the line, we check if the slope is within a specified range of 0.8 and 0.5 for left lanelines (since they have a positive slope) and _0.8 and -0.5 for right lanelines (as they have a negative slope).
+3. Then, we check if the end points of a line have both endpoints on the left side of the image, then it is a left lane. If no, then it is a right lane.
+4. We create two empty lists *left_slope* and *right slope* to store left and right lines. We apply the steps 2 and 3 to classify the lines using **left_slope.append(line)**. Using the equation **y = mx + b**, we calculate and store the b intercept in two lists *left_b* and *right_b*.
+5. We calculate the average slope and b intercept for the left line and for the right line.
+6. To draw the lines, we specify the y co-ordinates. The lower y co-ordinate for the laneline will be at the bottom of the image, i.e. image.shape[0] and higher y co-ordinate is specified as 330.
+7. We draw the lines using **cv2.line()** from OpenCV.
+
+**Note:** In our code, we have to take care that the loop doesn't fail, if it encounters a division by zero in the slope formula. Hence, we have included the **ZeroDivisionError** in our loop.
+
+### 2. Potential Shortcomings of the Pipeline
+
+1. It uses fixed parameters for thresholding and does not take into account the variance in road textures, shadows, etc.
+2. The pipeline does not take into account any possible curvatures of the road.
+3. The laneline detection algorithm we have developed does not separate between different types of lane lines (such as continuous lines, double yellow, single white line, etc.)
+
+### 3. Scope for improvements to the pipeline
+
+1. We should experiment more with multiple thresholding options for different channels in RGB/HSV/HLS formats.
+2. We can use a curve equation like **ax^2 + bx + c** for capturing road curvatures.
+3. We can also improve the parameters for higher accuracy.
+
