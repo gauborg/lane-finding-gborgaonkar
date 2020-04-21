@@ -27,4 +27,4 @@ In the **draw_lines()** function, I used the following principles to identify la
 
 1. We filter every line from our list of detected lines (using Canny) by specifying a slope range. The lane lines on the left side of the image will have positive slope whereas those on the right side have negative slope.
 
-<img src="readMe_images/slope_formula.png" width="480" alt="Combined Image" />
+![slope of a line](/readMe_images/slope_formula.png)
