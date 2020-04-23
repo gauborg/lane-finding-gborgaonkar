@@ -12,8 +12,6 @@ import cv2
 import math
 import moviepy
 
-get_ipython().magic(u'matplotlib inline')
-
 
 image = mpimg.imread('test_images/solidWhiteRight.jpg')
 
@@ -260,20 +258,18 @@ white_output = 'test_videos_output/solidWhiteRight.mp4'
 ##clip1 = VideoFileClip("test_videos/solidWhiteRight.mp4").subclip(0,5)
 clip1 = VideoFileClip("test_videos/solidWhiteRight.mp4")
 white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
-get_ipython().magic(u'time white_clip.write_videofile(white_output, audio=False)')
-
-
+white_clip.write_videofile(white_output, audio=False)
 
 yellow_output = 'test_videos_output/solidYellowLeft.mp4'
 
 clip2 = VideoFileClip('test_videos/solidYellowLeft.mp4')
 yellow_clip = clip2.fl_image(process_image)
-get_ipython().magic(u'time yellow_clip.write_videofile(yellow_output, audio=False)')
+yellow_clip.write_videofile(yellow_output, audio=False)
 
 
 challenge_output = 'test_videos_output/challenge.mp4'
 
 clip3 = VideoFileClip('test_videos/challenge.mp4')
 challenge_clip = clip3.fl_image(process_image)
-get_ipython().magic(u'time challenge_clip.write_videofile(challenge_output, audio=False)')
+challenge_clip.write_videofile(challenge_output, audio=False)
 
