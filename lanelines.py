@@ -257,7 +257,7 @@ white_output = 'test_videos_output/solidWhiteRight.mp4'
 ## You may also uncomment the following line for a subclip of the first 5 seconds
 ##clip1 = VideoFileClip("test_videos/solidWhiteRight.mp4").subclip(0,5)
 clip1 = VideoFileClip("test_videos/solidWhiteRight.mp4")
-white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
+white_clip = clip1.fl_image(process_image) # NOTE: this function expects color images!!
 white_clip.write_videofile(white_output, audio=False)
 
 yellow_output = 'test_videos_output/solidYellowLeft.mp4'
